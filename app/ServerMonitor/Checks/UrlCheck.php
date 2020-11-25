@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ServerMonitor;
+namespace App\ServerMonitor\Checks;
 
 use Spatie\ServerMonitor\CheckDefinitions\CheckDefinition;
 use Symfony\Component\Process\Process;
@@ -9,6 +9,14 @@ use GuzzleHttp\Client;
 
 class UrlCheck extends CheckDefinition
 {
+    /**
+     * @var bool
+     */
+    public $disableRemoteConnection = true;
+
+    /**
+     * @var string
+     */
     public $command = '';
 
 

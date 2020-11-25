@@ -12,7 +12,7 @@ return [
         'elasticsearch' => Spatie\ServerMonitor\CheckDefinitions\Elasticsearch::class,
         'memcached' => Spatie\ServerMonitor\CheckDefinitions\Memcached::class,
         'mysql' => Spatie\ServerMonitor\CheckDefinitions\MySql::class,
-        'url' => App\ServerMonitor\UrlCheck::class
+        'url' => App\ServerMonitor\Checks\UrlCheck::class
     ],
 
     /*
@@ -95,7 +95,7 @@ return [
      *
      * This class should implement Spatie\ServerMonitor\Manipulators\Manipulator
      */
-    'process_manipulator' => Spatie\ServerMonitor\Manipulators\Passthrough::class,
+    'process_manipulator' => App\ServerMonitor\CustomManipulator::class,
 
     /*
      * Thresholds for disk space's alert.
