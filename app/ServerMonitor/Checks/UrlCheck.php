@@ -28,8 +28,13 @@ class UrlCheck extends CheckDefinition
     {
         $client = new Client();
         $error = false;
+        $urls = $this->check->getCustomProperty('urls');
 
-        foreach($this->check->getCustomProperty('urls') AS $url) {
+        if(!$urls) {
+            $urls = ['http://www.' . $this->check->host->name];
+        }
+
+        foreach($urls AS $url) {
             $response = $client->get($url);
             if($response->getStatusCode() !== 200) {
                 $error = true;
