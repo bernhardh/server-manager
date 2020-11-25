@@ -51,7 +51,7 @@ return [
          * To avoid burying you in notifications, we'll only send one every given amount
          * of minutes when a check keeps emitting warning or keeps failing.
          */
-        'throttle_failing_notifications_for_minutes' => 60,
+        'throttle_failing_notifications_for_minutes' => env('SERVER_MONITOR_MAIL_THROTTLE', 60),
 
         // Separate the email by , to add many recipients
         'mail' => [
