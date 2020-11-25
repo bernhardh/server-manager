@@ -1,3 +1,3 @@
 <div>
-    <x-jet-secondary-button wire:click="run">Run all checks</x-jet-secondary-button>
+    <x-jet-secondary-button wire:click="run">{{ $slot }}</x-jet-secondary-button>
 </div>

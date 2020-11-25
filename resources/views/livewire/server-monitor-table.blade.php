@@ -1,5 +1,10 @@
 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-    <h2 class="text-2xl text-center my-3">{{ $host->name }}</h2>
+    <div class="float-right mt-3">
+        <livewire:server-monitor-run :host="$host" slot="Run checks" />
+    </div>
+    <h2 class="text-2xl text-center my-3">
+        {{ $host->name }}
+    </h2>
 
     <table class="min-w-full table-auto">
         <thead class="justify-between">
@@ -13,7 +18,7 @@
         </thead>
         <tbody class="bg-gray-200">
         @foreach($host->checks as $check)
-            <livewire:server-monitor-row :check="$check"></livewire:server-monitor-row>
+            <livewire:server-monitor-row :check="$check" />
         @endforeach
         </tbody>
     </table>

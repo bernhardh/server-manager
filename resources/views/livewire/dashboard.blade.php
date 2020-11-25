@@ -1,6 +1,6 @@
 <div>
     <div class="text-right mb-4">
-        <livewire:server-monitor-run></livewire:server-monitor-run>
+        <livewire:server-monitor-run slot="Run all checks" />
     </div>
 
     <div class="md:grid md:grid-cols-1">
