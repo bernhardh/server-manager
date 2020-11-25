@@ -1,5 +1,5 @@
 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-    <div class="float-right mt-3">
+    <div class="float-right mt-3 mr-3">
         <livewire:server-monitor-run :host="$host" slot="Run checks" />
     </div>
     <h2 class="text-2xl text-center my-3">
